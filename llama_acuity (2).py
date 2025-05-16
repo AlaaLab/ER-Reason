@@ -67,7 +67,7 @@ def process_record(idx, row, model, tokenizer, temperature=TEMPERATURE):
     return response
 
 # Main function
-if __name__ == '__main__':  # Fixed the syntax here
+if __name__ == '__main__':  
     # Process each record in the DataFrame
     summaries = []
     
@@ -107,7 +107,6 @@ if __name__ == '__main__':  # Fixed the syntax here
     # Add the generated summaries as a new column in the DataFrame
     df['Predicted_Acuity'] = summaries
     
-    # Save the updated DataFrame to a new CSV file - include temperature in filename
-    output_filename = f'RACE_llama_4_experiment_temp{TEMPERATURE}.csv'
+    output_filename = f'llama_4_experiment_temp{TEMPERATURE}.csv'
     df.to_csv(output_filename, index=False)
     print(f"Processed summaries saved to '{output_filename}'")
