@@ -31,9 +31,6 @@ ER-Reason is designed to move beyond multiple-choice exam-style QA and instead t
   - Disposition Planning (Admit, Discharge, ICU)
   - Final Diagnosis
 
-- **🧠 Clinical Reasoning Annotations**  
-  72 physician-authored rationales explaining the reasoning behind clinical decisions—modeled after residency-level teaching and not typically found in EHR documentation.
-
 - **🤖 Model Compatibility**  
   ER-Reason includes code and templates for evaluating:
   - **LLaMA 3.2-3B-Instruct**
@@ -48,10 +45,3 @@ ER-Reason is designed to move beyond multiple-choice exam-style QA and instead t
   - Rationale generation: creating the reasoning behind clinical decisions, aligned with physician thinking
   - Diagnosis inference: inferring the most likely diagnosis based on EHR data and symptoms
   - Disposition prediction: predicting whether a patient should be admitted, discharged, or sent to the ICU.
-
----
-# GitHub Repo Includes Code for Tasks across: Acuity, Disposition, Diagnosis, EHR Review Summarization, and Rationale that can be applied for the following models:
-1. Llama 3.0 
-2. GPT-4o
-3. GPT 3.5-Turbo
-4. O3-Mini  
