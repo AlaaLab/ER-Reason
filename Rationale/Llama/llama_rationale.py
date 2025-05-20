@@ -6,7 +6,6 @@ import pandas as pd
 import time
 import re
 
-df= "/wynton/protected/home/ibrahim/nmehandru/ed-summarization/rationales/Rationale_Collection_Final_Results - Sheet1.csv"
 # Load your local LLaMA 3.2-3B model
 model_path = '/wynton/protected/project/shared_models/llama3-hf_series/Llama-3.2-3B-Instruct/'
 
@@ -243,6 +242,3 @@ df["Requested_Notes"] = [result[3] if result[3] is not None else "No response" f
 
 # Preview the DataFrame to confirm
 print(df.head())
-
-# Save to CSV and Display
-df.to_csv("/wynton/protected/home/ibrahim/nmehandru/ed-summarization/rationales Sheet1.csvo3_72_rationale.csv", index=False)
