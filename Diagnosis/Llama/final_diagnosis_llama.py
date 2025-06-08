@@ -14,7 +14,7 @@ import os
 df = pd.read_csv('/filtered_final_dataset.csv')
 output_csv= "/diag_predictions.csv"
 
-model_path = '/wynton/protected/project/shared_models/llama3-hf_series/Llama-3.2-3B-Instruct/'
+model_path = '...Llama-3.2-3B-Instruct/'
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 
 pipeline = transformers.pipeline(
