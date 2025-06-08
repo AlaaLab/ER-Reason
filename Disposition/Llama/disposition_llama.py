@@ -179,7 +179,5 @@ if __name__ == '__main__':
     df.loc[valid_indices, 'Predicted_Disposition'] = all_predictions
     df.loc[valid_indices, 'Requested_Notes'] = all_requested_notes
 
-    # Save the DataFrame with the predictions to a
-
     df.to_csv("...llama_disposition_predictions.csv", index=False)
     print("Batch predictions saved to 'llama_disposition_predictions.csv'")
