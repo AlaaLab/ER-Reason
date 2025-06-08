@@ -1,10 +1,3 @@
-################################################################################################
-# Job for Llama 3 Baseline
-# Author: Niloufar Golchini
-# Date last edited: 03/10/2025
-################################################################################################
-
-
 import sys
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -13,11 +6,10 @@ import pandas as pd
 import json
 import gc
 
-# Load the CSV file
 discharge_summaries = pd.read_csv('results.csv')
 
 # Path to the model
-model_path = 'Llama-3.2-3B-Instruct/'
+model_path = '...Llama-3.2-3B-Instruct/'
 
 # Model parameters
 TEMPERATURE = 0.5  
