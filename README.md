@@ -45,16 +45,25 @@ ER-Reason is designed to move beyond multiple-choice exam-style QA and instead t
   - Rationale generation: creating the reasoning behind clinical decisions, aligned with physician thinking
   - Diagnosis inference: inferring the most likely diagnosis based on EHR data and symptoms
   - Disposition prediction: predicting whether a patient should be admitted, discharged, or sent to the ICU.
-
+  - 
 ## 🚀 Getting Started
-**Step 1: Clone the ER-Reason repository**
-$git clone https://github.com/AlaaLab/ER-Reason.git
 
-**Step 2: Install dependencies**
-$pip install -r <path-to-repo>/ER-Reason/requirements.txt
+### **Step 1: Clone the ER-Reason repository**
 
-**Step 3: Download the dataset**
-Download the ER-Reason dataset from PhysioNet:
+```bash
+git clone https://github.com/AlaaLab/ER-Reason.git
+```
+
+### **Step 2: Install dependencies**
+
+```bash
+pip install -r <path-to-repo>/ER-Reason/requirements.txt
+```
+
+### **Step 3: Download the dataset**
+
+Download the ER-Reason dataset from PhysioNet:  
 https://physionet.org/projects/JGAP8qn2p4CPnPeXceVE/overview/
 
-Note: Access requires registration and data use agreement approval. 
+> **Note:** Access requires registration and data use agreement approval.
+
