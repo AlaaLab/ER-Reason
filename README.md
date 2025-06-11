@@ -47,13 +47,13 @@ ER-Reason is designed to move beyond multiple-choice exam-style QA and instead t
   - Disposition prediction: predicting whether a patient should be admitted, discharged, or sent to the ICU.
 
 ## 🚀 Getting Started
-Step 1: Clone the ER-Reason repository:
+**Step 1: Clone the ER-Reason repository**
 $git clone https://github.com/AlaaLab/ER-Reason.git
 
-Step 2: Install dependencies:
+**Step 2: Install dependencies**
 $pip install -r <path-to-repo>/ER-Reason/requirements.txt
 
-Step 3: Download the dataset
+**Step 3: Download the dataset**
 Download the ER-Reason dataset from PhysioNet:
 https://physionet.org/projects/JGAP8qn2p4CPnPeXceVE/overview/
 
