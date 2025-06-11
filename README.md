@@ -46,7 +46,7 @@ ER-Reason is designed to move beyond multiple-choice exam-style QA and instead t
   - Diagnosis inference: inferring the most likely diagnosis based on EHR data and symptoms
   - Disposition prediction: predicting whether a patient should be admitted, discharged, or sent to the ICU.
 
-🚀 Getting Started
+## 🚀 Getting Started
 Step 1: Clone the ER-Reason repository:
 $git clone https://github.com/AlaaLab/ER-Reason.git
 
