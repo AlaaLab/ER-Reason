@@ -6,6 +6,8 @@ ER-Reason is a large-scale benchmark suite for evaluating the clinical reasoning
 
 ER-Reason is designed to move beyond multiple-choice exam-style QA and instead test LLMs on realistic, multi-stage clinical workflows grounded in real-world electronic health records (EHRs). ER-Reason simulates the full ER decision-making pipeline—including triage, treatment selection, and final diagnosis—and includes expert-written rationales to capture the step-by-step thinking used by physicians in real clinical settings.
 
+For detailed column descriptions of the dataset, see:  
+[ER-Reason Dataset Column Descriptions](./ER-Reason_Column_Descriptions.md)
 
 ## ✅ Key Features
 
