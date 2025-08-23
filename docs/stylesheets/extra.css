@@ -32,32 +32,32 @@ body {
 .boxes-container {
   display: flex;
   justify-content: center;
-  gap: 50px;        /* space between boxes */
-  margin-top: 50px;  /* space above container */
-  flex-wrap: wrap;   /* responsive wrap */
+  gap: 20px;        /* smaller space between boxes */
+  margin-top: 40px;  /* space above container */
+  flex-wrap: nowrap; /* prevent vertical stacking */
 }
 
 /* Individual boxes */
 .box {
   background-color: #4b66b4;
-  border-radius: 16px;
-  padding: 30px 40px;
+  border-radius: 12px;
+  padding: 12px 20px;  /* smaller padding */
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 160px;
+  width: auto;        /* fit box to content */
 }
 
 /* Links inside boxes */
 .box a {
   color: #ffffff;
-  font-size: 1.25rem;
+  font-size: 1.1rem;  /* smaller font size */
   font-weight: bold;
   text-decoration: none;
 }
 
 /* Hover effect for boxes */
 .box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+  transform: translateY(-2px);  /* subtle lift */
+  box-shadow: 0 6px 8px rgba(0,0,0,0.25);
 }
