@@ -16,20 +16,33 @@ body.homepage {
 .box-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-top: 20px;
 }
 
 .box {
-  background-color: #000000;
+  background-color: #4b66b4; /* A shade of purplish-blue */
   color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 12px 20px;
+  border-radius: 8px; /* Slightly more rounded corners */
   text-align: center;
   text-decoration: none;
   font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  transition: background-color 0.3s ease; /* Adds a smooth transition */
 }
 
 .box:hover {
-  background-color: #222222;
+  background-color: #6380c9; /* Lighter shade on hover */
+}
+
+/* New: Changes the main headings and strong text to white */
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6,
+.md-content strong {
+  color: #ffffff;
 }
