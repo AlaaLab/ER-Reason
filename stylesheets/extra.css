@@ -1,0 +1,48 @@
+:root {
+  --md-default-bg-color: #000000;
+  --md-default-fg-color: #ffffff;
+}
+
+body.homepage {
+  --md-default-bg-color: #000000;
+  --md-default-fg-color: #ffffff;
+}
+
+body {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+
+.md-header {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6,
+.md-content strong {
+  color: #ffffff;
+}
+
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+.box-container a {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.23rem;
+  transition: opacity 0.3s ease; 
+}
