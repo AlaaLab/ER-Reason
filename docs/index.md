@@ -39,6 +39,11 @@ This benchmark is a significant step forward in evaluating the real-world applic
 
 ## Links
 
-- [Paper (preprint)](https://arxiv.org/abs/2505.22919)  
-- [GitHub Repository](https://github.com/AlaaLab/ER-Reason)  
-- **Dataset:** (Coming soon on PhysioNet — check the GitHub repository for updates)
+<div class="box-container">
+  <a href="https://arxiv.org/abs/2505.22919" class="box">Paper (preprint)</a>
+  <a href="https://github.com/AlaaLab/ER-Reason" class="box">GitHub Repository</a>
+  <a href="coming soon" class="box">Dataset: Under review at PhysioNet</a>
+</div>
+
+
+
