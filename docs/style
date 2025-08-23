@@ -1,0 +1,35 @@
+:root {
+  --md-default-bg-color: #000000;
+  --md-default-fg-color: #ffffff;
+}
+
+body.homepage {
+  --md-default-bg-color: #000000;
+  --md-default-fg-color: #ffffff;
+}
+
+.md-header {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.box {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.box:hover {
+  background-color: #555555;
+}
