@@ -32,16 +32,18 @@ body {
 .box-container {
   display: flex !important;            /* horizontal row */
   justify-content: center !important;  /* center boxes */
-  gap: 20px !important;                /* spacing between boxes */
+  gap: 20px !important;                /* proper spacing between boxes */
   margin-top: 40px !important;
   flex-wrap: nowrap !important;        /* prevent vertical stacking */
 }
 
 /* Individual boxes */
 .box {
-  display: inline-block !important;    /* shrink to fit content */
-  background-color: #4b66b4 !important;
-  color: #ffffff !important;
+  display: flex !important;            /* flex item, spacing works */
+  justify-content: center;
+  align-items: center;
+  background-color: #4b66b4 !important; /* blue background */
+  color: #ffffff !important;           /* white text */
   padding: 12px 20px !important;       /* compact padding */
   font-size: 1.1rem !important;        /* readable font */
   font-weight: bold !important;
@@ -50,10 +52,10 @@ body {
   text-align: center !important;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  width: auto !important;              /* fit to content */
+  width: auto !important;              /* fit box to content */
 }
 
-/* Hover effect for boxes */
+/* Hover effect */
 .box:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 8px rgba(0,0,0,0.25) !important;
