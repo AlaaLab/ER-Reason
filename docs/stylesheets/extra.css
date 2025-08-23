@@ -21,21 +21,19 @@ body.homepage {
 }
 
 .box {
-  background-color: #4b66b4; 
-  color: #ffffff;
+  background-color: #4b66b4; /* This is the button background color */
   padding: 12px 20px;
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
 .box:hover {
   background-color: #6380c9;
 }
-
 
 .md-content h1,
 .md-content h2,
@@ -47,7 +45,7 @@ body.homepage {
   color: #ffffff;
 }
 
-
+/* This is the crucial line that makes the link text white */
 .box a {
-  color: #ffffff;
+  color: #ffffff !important;
 }
