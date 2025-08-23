@@ -21,7 +21,7 @@ body.homepage {
 }
 
 .box {
-  background-color: #4b66b4; /* This is the button background color */
+  background-color: #4b66b4;
   padding: 12px 20px;
   border-radius: 8px;
   text-align: center;
@@ -45,7 +45,7 @@ body.homepage {
   color: #ffffff;
 }
 
-/* This is the crucial line that makes the link text white */
+
 .box a {
   color: #ffffff !important;
 }
