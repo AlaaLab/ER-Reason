@@ -32,10 +32,11 @@ body {
 .box-container, .md-typeset .box-container {
   display: flex !important;
   justify-content: center !important;
-  gap: 20px !important;
+  gap: 40px !important;
   margin-top: 40px !important;
   flex-wrap: nowrap !important;
 }
+
 
 /* Individual boxes */
 .box, .md-typeset .box {
