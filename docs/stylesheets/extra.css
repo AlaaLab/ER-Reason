@@ -29,35 +29,32 @@ body {
 }
 
 /* Container for the three boxes */
-.boxes-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;        /* smaller space between boxes */
-  margin-top: 40px;  /* space above container */
-  flex-wrap: nowrap; /* prevent vertical stacking */
+.box-container {
+  display: flex !important;            /* horizontal row */
+  justify-content: center !important;  /* center boxes */
+  gap: 20px !important;                /* spacing between boxes */
+  margin-top: 40px !important;
+  flex-wrap: nowrap !important;        /* prevent vertical stacking */
 }
 
 /* Individual boxes */
 .box {
-  background-color: #4b66b4;
-  border-radius: 12px;
-  padding: 12px 20px;  /* smaller padding */
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: auto;        /* fit box to content */
-}
-
-/* Links inside boxes */
-.box a {
-  color: #ffffff;
-  font-size: 1.1rem;  /* smaller font size */
-  font-weight: bold;
-  text-decoration: none;
+  display: inline-block !important;    /* shrink to fit content */
+  background-color: #4b66b4 !important;
+  color: #ffffff !important;
+  padding: 12px 20px !important;       /* compact padding */
+  font-size: 1.1rem !important;        /* readable font */
+  font-weight: bold !important;
+  text-decoration: none !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  width: auto !important;              /* fit to content */
 }
 
 /* Hover effect for boxes */
 .box:hover {
-  transform: translateY(-2px);  /* subtle lift */
-  box-shadow: 0 6px 8px rgba(0,0,0,0.25);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.25) !important;
 }
