@@ -15,4 +15,4 @@ nav:
   - Home: index.md
 
 extra_css:
-  - /stylesheets/extra.css
+  - stylesheets/extra.css
