@@ -6,6 +6,8 @@ site_dir: site
 theme:
   name: material
 
+plugins: []
+
 nav:
   - Home: index.md
 
