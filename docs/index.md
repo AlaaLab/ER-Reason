@@ -8,16 +8,10 @@ hide:
 
 ![ER-REASON image](images/er.png)
 
-<div class="boxes-wrapper">
-  <div class="box">
-    <a href="https://arxiv.org/abs/2505.22919">Paper</a>
-  </div>
-  <div class="box">
-    <a href="https://github.com/AlaaLab/ER-Reason">GitHub</a>
-  </div>
-  <div class="box">
-    <a href="coming soon">Dataset</a>
-  </div>
+<div class="box-container">
+  <a href="https://arxiv.org/abs/2505.22919" class="box">Paper</a>
+  <a href="https://github.com/AlaaLab/ER-Reason" class="box">GitHub</a>
+  <a href="coming soon" class="box">Dataset</a>
 </div>
 
 
@@ -52,6 +46,7 @@ This benchmark is structured around **five key stages of the emergency room work
 ---
 
 This benchmark is a significant step forward in evaluating the real-world applicability of LLMs in emergency care by moving beyond factual recall to assess **true clinical reasoning, pattern recognition, and decision-making** under realistic conditions.
+
 
 
 
