@@ -22,6 +22,7 @@ body.homepage {
 
 .box {
   background-color: #4b66b4;
+  color: #ffffff; 
   padding: 12px 20px;
   border-radius: 8px;
   text-align: center;
@@ -45,7 +46,6 @@ body.homepage {
   color: #ffffff;
 }
 
-
 .box a {
-  color: #ffffff !important;
+  color: #ffffff;
 }
