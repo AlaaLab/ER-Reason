@@ -28,7 +28,7 @@ body {
   color: #ffffff;
 }
 
-/* Container for your links */
+
 .box-container {
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@ body {
   margin-top: 20px;
 }
 
-/* Links inside container — layout only, no forced color */
+
 .box-container a {
   padding: 12px 20px;
   border-radius: 8px;
