@@ -8,12 +8,17 @@ hide:
 
 ![ER-REASON image](images/er.png)
 
-<div class="box-container">
-  <a href="https://arxiv.org/abs/2505.22919">Paper</a>
-  <a href="https://github.com/AlaaLab/ER-Reason">GitHub</a>
-  <a href="coming soon">Dataset</a>
+<div class="boxes-wrapper">
+  <div class="box">
+    <a href="https://arxiv.org/abs/2505.22919">Paper</a>
+  </div>
+  <div class="box">
+    <a href="https://github.com/AlaaLab/ER-Reason">GitHub</a>
+  </div>
+  <div class="box">
+    <a href="coming soon">Dataset</a>
+  </div>
 </div>
-
 
 
 ---
@@ -41,12 +46,13 @@ This benchmark is structured around **five key stages of the emergency room work
 5. **Final Diagnosis:** Formulation of the final patient diagnosis  
 
 ### Physician-Authored Rationales
-- Includes **72 expert-authored rationales** explaining the clinical decision-making process.  
-- Provides a unique "gold standard" for evaluating **why** decisions are made, which is often missing from traditional EHR data.
+- Includes **72 expert-authored rationales** explaining their clinical decision-making process.  
+- Provides a unique "gold standard" for evaluating reasoning in medical decisions, which is often missing from traditional EHR data.
 
 ---
 
 This benchmark is a significant step forward in evaluating the real-world applicability of LLMs in emergency care by moving beyond factual recall to assess **true clinical reasoning, pattern recognition, and decision-making** under realistic conditions.
+
 
 
 
