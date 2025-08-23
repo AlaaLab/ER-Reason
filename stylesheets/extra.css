@@ -28,33 +28,36 @@ body {
   color: #ffffff;
 }
 
-/* Container for links */
-.box-container {
+/* Container for the three boxes */
+.boxes-container {
   display: flex;
   justify-content: center;
-  gap: 40px;        /* space between boxes */
+  gap: 20px;        /* smaller space between boxes */
   margin-top: 40px;  /* space above container */
-  flex-wrap: wrap;   /* wrap on smaller screens */
+  flex-wrap: nowrap; /* prevent vertical stacking */
 }
 
-/* Box-style links */
-.box-container a {
-  display: inline-block;
-  padding: 16px 28px;
-  font-size: 1.23rem;      
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;           /* white text */
-  background-color: #4b66b4;/* blue background */
+/* Individual boxes */
+.box {
+  background-color: #4b66b4;
   border-radius: 12px;
+  padding: 12px 20px;  /* smaller padding */
+  text-align: center;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: auto;        /* fit box to content */
 }
 
-/* Hover effect */
-.box-container a:hover {
-  background-color: #6380c9;
-  transform: translateY(-2px);
+/* Links inside boxes */
+.box a {
+  color: #ffffff;
+  font-size: 1.1rem;  /* smaller font size */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Hover effect for boxes */
+.box:hover {
+  transform: translateY(-2px);  /* subtle lift */
   box-shadow: 0 6px 8px rgba(0,0,0,0.25);
 }
