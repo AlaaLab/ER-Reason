@@ -8,31 +8,14 @@ body.homepage {
   --md-default-fg-color: #ffffff;
 }
 
+body {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+
 .md-header {
   background-color: #000000;
   color: #ffffff;
-}
-
-.box-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.box {
-  background-color: #4b66b4;
-  color: #ffffff; 
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.box:hover {
-  background-color: #6380c9;
 }
 
 .md-content h1,
@@ -45,6 +28,19 @@ body.homepage {
   color: #ffffff;
 }
 
-.box a {
-  color: #ffffff;
+/* Container for your links */
+.box-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Links inside container — layout only, no forced color */
+.box-container a {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
 }
