@@ -6,12 +6,12 @@ hide:
 
 **Advancing the evaluation of clinical reasoning in emergency care**
 
-![ER-REASON image](images/er-workflow.png)
+![ER-REASON image](images/er.png)
 
 <div class="box-container">
-  <a href="https://arxiv.org/abs/2505.22919" class="box">Paper (preprint)</a>
-  <a href="https://github.com/AlaaLab/ER-Reason" class="box">GitHub Repository</a>
-  <a href="coming soon" class="box">Dataset: Under review at PhysioNet</a>
+  <a href="https://arxiv.org/abs/2505.22919" class="box">Paper </a>
+  <a href="https://github.com/AlaaLab/ER-Reason" class="box">GitHub</a>
+  <a href="coming soon" class="box">Dataset </a>
 </div>
 
 
@@ -47,6 +47,7 @@ This benchmark is structured around **five key stages of the emergency room work
 ---
 
 This benchmark is a significant step forward in evaluating the real-world applicability of LLMs in emergency care by moving beyond factual recall to assess **true clinical reasoning, pattern recognition, and decision-making** under realistic conditions.
+
 
 
 
