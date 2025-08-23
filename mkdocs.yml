@@ -3,7 +3,8 @@ site_description: Advancing the evaluation of clinical reasoning in emergency ca
 docs_dir: docs
 site_dir: site
 
-site_url: ./
+site_url: https://alaalab.github.io/ER-Reason/
+use_directory_urls: false
 
 theme:
   name: material
