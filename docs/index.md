@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # ER-REASON: A Benchmark Dataset for LLM-Based Clinical Reasoning in the Emergency Room
 
 **Advancing the evaluation of clinical reasoning in emergency care**
@@ -44,6 +49,7 @@ This benchmark is a significant step forward in evaluating the real-world applic
   <a href="https://github.com/AlaaLab/ER-Reason" class="box">GitHub Repository</a>
   <a href="coming soon" class="box">Dataset: Under review at PhysioNet</a>
 </div>
+
 
 
 
