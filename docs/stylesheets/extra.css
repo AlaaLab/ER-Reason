@@ -3,7 +3,6 @@
   --md-default-fg-color: #ffffff;
 }
 
-/* Page background and text */
 body.homepage {
   --md-default-bg-color: #000000;
   --md-default-fg-color: #ffffff;
@@ -14,13 +13,11 @@ body {
   color: var(--md-default-fg-color);
 }
 
-/* Header styling */
 .md-header {
   background-color: #000000;
   color: #ffffff;
 }
 
-/* Ensure headings and strong text are white */
 .md-content h1,
 .md-content h2,
 .md-content h3,
@@ -31,35 +28,34 @@ body {
   color: #ffffff;
 }
 
-/* Container for the three boxes */
-.md-typeset .box-container {
-  display: flex !important;            
-  justify-content: center !important;  
-  gap: 20px !important;                
+/* Boxes container */
+.box-container, .md-typeset .box-container {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px !important;
   margin-top: 40px !important;
-  flex-wrap: nowrap !important;        
+  flex-wrap: nowrap !important;
 }
 
 /* Individual boxes */
-.md-typeset .box {
-  display: flex !important;            
+.box, .md-typeset .box {
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  background-color: #4b66b4 !important; /* blue background */
-  color: #ffffff !important;           /* white text */
-  padding: 12px 20px !important;       /* compact padding */
-  font-size: 1.1rem !important;        
+  background-color: #4b66b4 !important;
+  color: #ffffff !important;
+  padding: 12px 20px !important;
+  font-size: 1.1rem !important;
   font-weight: bold !important;
   text-decoration: none !important;
   border-radius: 12px !important;
   text-align: center !important;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  width: auto !important;              
+  width: auto !important;
 }
 
-/* Hover effect for boxes */
-.md-typeset .box:hover {
+.box:hover, .md-typeset .box:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 8px rgba(0,0,0,0.25) !important;
 }
