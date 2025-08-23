@@ -28,26 +28,33 @@ body {
   color: #ffffff;
 }
 
+/* Container for links */
 .box-container {
   display: flex;
   justify-content: center;
-  gap: 25px; 
-  margin-top: 30px;
+  gap: 40px;        /* space between boxes */
+  margin-top: 40px;  /* space above container */
+  flex-wrap: wrap;   /* wrap on smaller screens */
 }
 
+/* Box-style links */
 .box-container a {
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-align: center;
+  display: inline-block;
+  padding: 16px 28px;
+  font-size: 1.23rem;      
   font-weight: bold;
+  text-align: center;
   text-decoration: none;
-  font-size: 1.23rem;
-  color: inherit; 
-  display: inline-block; 
-  transition: opacity 0.3s ease;
+  color: #ffffff;           /* white text */
+  background-color: #4b66b4;/* blue background */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .box-container a:hover {
-  opacity: 0.8;
+  background-color: #6380c9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.25);
 }
-
