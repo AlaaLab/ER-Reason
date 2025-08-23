@@ -19,9 +19,8 @@ hide:
 
 Large language models (LLMs) are increasingly applied to the field of medicine, but most benchmarks focus on narrow, exam-style medical question-answering rather than the evaluation of full clinical reasoning. 
 
-ER-REASON is designed to test how well large language models (LLMs) can approximate the complex, real-world reasoning of clinicians in a high-stakes, time-sensitive environment.
+ER-REASON captures the end-to-end ER decision-making pipeline, and is designed to test how well LLMs can approximate the complex, real-world reasoning of clinicians in a high-stakes settings. 
 
-ER-Reason captures the end-to-end ER decision-making pipeline. Physician notes reflect **real reasoning under fragmented, noisy, and time-sensitive conditions**, enabling evaluation of whether LLMs can approximate clinician reasoning and support high-stakes, rapid medical decisions.
 
 ---
 
@@ -47,6 +46,7 @@ This benchmark is structured around **five key stages of the emergency room work
 ---
 
 This benchmark is a significant step forward in evaluating the real-world applicability of LLMs in emergency care by moving beyond factual recall to assess **true clinical reasoning, pattern recognition, and decision-making** under realistic conditions.
+
 
 
 
