@@ -20,14 +20,14 @@
 | `Consult_Key` | Unique identifier linking to the historical consult note |
 | `ED_Provider_Notes_Key` | Unique identifier for the current visit's ED provider note |
 | `ECG_Key` | Unique identifier linking to the historical ECG note |
-| `Discharge_Summary_Text` | **Historical**: Discharge summary text from patient's previous hospital encounter |
-| `Progress_Note_Text` | **Historical**: Progress note text from patient's previous hospital encounter |
-| `HP_Note_Text` | **Historical**: History and physical note from patient's previous hospital encounter |
-| `Echo_Text` | **Historical**: Echocardiogram results and interpretation from patient's previous hospital encounter |
-| `Imaging_Text` | **Historical**: Imaging reports and findings from patient's previous hospital encounter |
-| `Consult_Text` | **Historical**: Specialist consultation notes from patient's previous hospital encounter |
-| `ECG_Text` | **Historical**: Electrocardiogram results and interpretation from patient's previous hospital encounter |
-| `ED_Provider_Notes_Text` | **Current Visit**: ED Provider note from the current ER visit (associated with this encounter, patient, chief complaint, and diagnosis) |
+| `Discharge_Summary_Text` | Discharge summary text from patient's previous hospital encounter |
+| `Progress_Note_Text` |  Progress note text from patient's previous hospital encounter |
+| `HP_Note_Text` | History and physical note from patient's previous hospital encounter |
+| `Echo_Text` | Echocardiogram results and interpretation from patient's previous hospital encounter |
+| `Imaging_Text` | Imaging reports and findings from patient's previous hospital encounter |
+| `Consult_Text` | Specialist consultation notes from patient's previous hospital encounter |
+| `ECG_Text` | Electrocardiogram results and interpretation from patient's previous hospital encounter |
+| `ED_Provider_Notes_Text` | Current Visit: ED Provider note from the current ER visit (associated with this encounter, patient, chief complaint, and diagnosis) |
 | `One_Sentence_Extracted` | Key one-liner summary extracted from the current ED provider note |
 | `note_count` | Number of notes associated with the patient in this dataset (minimum 2: ED and discharge summary, increases based on availability) |
 | `acuitylevel` | Assigned ESI (Emergency Severity Index) level at triage when patient arrived at ER |
