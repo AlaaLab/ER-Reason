@@ -22,7 +22,6 @@ html, body {
   background-color: #000000 !important;
 }
 
-
 :root {
   --md-default-bg-color: #000000;
   --md-default-fg-color: #ffffff;
@@ -54,124 +53,23 @@ body {
   color: #ffffff;
 }
 
-/* Boxes container */
-.box-container, .md-typeset .box-container {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 40px !important;
-  margin-top: 40px !important;
-  flex-wrap: nowrap !important;
-}
-
-
-/* Individual boxes */
-.box, .md-typeset .box {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+/* Style for Markdown .box links */
+a.box {
+  display: inline-block !important;
   background-color: #4b66b4 !important;
   color: #ffffff !important;
-  padding: 12px 20px !important;
-  font-size: 1.1rem !important;
+  padding: 12px 24px !important;
+  font-size: 1.2rem !important;
   font-weight: bold !important;
   text-decoration: none !important;
   border-radius: 12px !important;
-  text-align: center !important;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  width: auto !important;
+  margin: 0 10px !important;
+  transition: transform 0.3s ease !important;
 }
 
-.box:hover, .md-typeset .box:hover {
+a.box:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 8px rgba(0,0,0,0.25) !important;
-}
-
-/* Force dark theme regardless of Material theme settings */
-[data-md-color-scheme="slate"] {
-  --md-default-bg-color: #000000;
-  --md-default-fg-color: #ffffff;
-}
-
-/* Force background colors on main containers */
-html, body {
-  background-color: #000000 !important;
   color: #ffffff !important;
-}
-
-.md-main {
-  background-color: #000000 !important;
-}
-
-.md-main__inner {
-  background-color: #000000 !important;
-}
-
-.md-content {
-  background-color: #000000 !important;
-}
-
-
-:root {
-  --md-default-bg-color: #000000;
-  --md-default-fg-color: #ffffff;
-  --md-text-size: 1.1rem;
-}
-
-body.homepage {
-  --md-default-bg-color: #000000;
-  --md-default-fg-color: #ffffff;
-}
-
-body {
-  background-color: var(--md-default-bg-color);
-  color: var(--md-default-fg-color);
-}
-
-.md-header {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-.md-content h1,
-.md-content h2,
-.md-content h3,
-.md-content h4,
-.md-content h5,
-.md-content h6,
-.md-content strong {
-  color: #ffffff;
-}
-
-/* Boxes container */
-.box-container, .md-typeset .box-container {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 40px !important;
-  margin-top: 40px !important;
-  flex-wrap: nowrap !important;
-}
-
-
-/* Individual boxes */
-.box, .md-typeset .box {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  background-color: #4b66b4 !important;
-  color: #ffffff !important;
-  padding: 12px 20px !important;
-  font-size: 1.1rem !important;
-  font-weight: bold !important;
-  text-decoration: none !important;
-  border-radius: 12px !important;
-  text-align: center !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  width: auto !important;
-}
-
-.box:hover, .md-typeset .box:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 8px rgba(0,0,0,0.25) !important;
 }
