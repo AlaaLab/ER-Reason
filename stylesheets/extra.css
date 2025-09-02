@@ -1,6 +1,7 @@
 :root {
   --md-default-bg-color: #000000;
   --md-default-fg-color: #ffffff;
+  --md-text-size: 1.1rem;
 }
 
 body.homepage {
