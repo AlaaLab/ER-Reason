@@ -1,3 +1,28 @@
+/* Force dark theme regardless of Material theme settings */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #000000;
+  --md-default-fg-color: #ffffff;
+}
+
+/* Force background colors on main containers */
+html, body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.md-main {
+  background-color: #000000 !important;
+}
+
+.md-main__inner {
+  background-color: #000000 !important;
+}
+
+.md-content {
+  background-color: #000000 !important;
+}
+
+
 :root {
   --md-default-bg-color: #000000;
   --md-default-fg-color: #ffffff;
