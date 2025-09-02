@@ -1,36 +1,40 @@
 /* Ensure the theme's color scheme is dark */
 :root,
-[data-md-color-scheme="default"], /* Target default scheme if it's white */
 [data-md-color-scheme="slate"] {
   --md-default-bg-color: #000000;
   --md-default-fg-color: #ffffff;
-  --md-text-size: 1.2rem; /* Increased base text size slightly */
-  /* Ensure headings are white */
-  --md-text-link-color: #ffffff; /* Make default links white */
 }
-/* Force body and main content backgrounds to black */
-html, body,
-.md-main,
-.md-main__inner,
-.md-content {
-  background-color: #000000 !important;
-  color: #ffffff !important; /* Ensure default text is white */
+
+/* Styles for the individual boxes */
+.box-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 30px !important;
+  margin-top: 40px !important;
 }
-/* Header (top navigation) */
-.md-header {
-  background-color: #000000 !important;
+
+.box {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #4b66b4 !important;
   color: #ffffff !important;
+  padding: 15px 30px !important;
+  font-size: 1.4rem !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Table of contents and sidebar links */
-.md-sidebar--secondary,
-.md-nav__link {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+
+.box:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25) !important;
 }
-.md-nav__link:hover {
-  color: #cccccc !important;
-}
-/* Make sure all headings and strong text are white */
+
+/* Ensure all headings and strong text are white */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -41,54 +45,10 @@ html, body,
   color: #ffffff !important;
 }
 
-/* FIXED: Target your actual HTML structure */
-/* Your div has inline styles, not class="box-container" */
-div[style*="text-align: center"] {
-  display: block !important;
-  text-align: center !important;
-  margin: 40px 0 !important;
-}
-
-/* Individual Boxes - Target .box class directly (not .box-container .box) */
-.box,
-a.box,
-.md-typeset .box,
-.md-typeset a.box {
-  display: inline-flex !important;
-  justify-content: center !important;
-  align-items: center !important; /* Vertically center text in the box */
-  background-color: #4b66b4 !important; /* Blue background */
-  color: #ffffff !important; /* White text */
-  padding: 15px 30px !important; /* Larger padding for bigger boxes */
-  font-size: 1.4rem !important; /* Significantly larger font size for box text */
-  font-weight: bold !important;
-  text-decoration: none !important; /* Remove underline */
-  border-radius: 12px !important;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.3) !important; /* More pronounced shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  min-width: 150px !important; /* Ensure a minimum width for the boxes */
-  margin: 0 15px !important; /* Add spacing between boxes */
-}
-
-/* Hover effects for .box class directly */
-.box:hover,
-a.box:hover,
-.md-typeset .box:hover,
-.md-typeset a.box:hover {
-  transform: translateY(-3px) !important; /* More pronounced lift on hover */
-  box-shadow: 0 8px 12px rgba(0,0,0,0.4) !important; /* Darker shadow on hover */
-  color: #ffffff !important; /* Keep text white on hover */
-  text-decoration: none !important; /* Ensure no underline on hover */
-}
-
-/* Remove hyperlink style for "ER-Reason" - Enhanced */
-.md-header__title,
-.md-header__title a,
-.md-header__button.md-logo img + .md-header__title,
-.md-header__title[href="/ER-Reason/"],
-.md-header__title[href*="ER-Reason"] {
-    text-decoration: none !important;
-    cursor: default !important; /* Show normal cursor */
-    pointer-events: none !important; /* Completely disable clicking */
-    color: #ffffff !important;
+/* Remove hyperlink from site name */
+.md-header__button.md-logo + .md-header__title,
+.md-header__title {
+  text-decoration: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
 }
