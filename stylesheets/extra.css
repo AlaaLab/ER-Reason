@@ -1,15 +1,24 @@
-/* Ensure the theme's color scheme is dark */
-:root,
-[data-md-color-scheme="slate"] {
-  --md-default-bg-color: #000000;
-  --md-default-fg-color: #ffffff;
+/* Force dark background for the entire site */
+html,
+body,
+.md-main,
+.md-main__inner,
+.md-content,
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Make the main body text a bigger font */
+.md-typeset {
+  font-size: 1rem !important;
 }
 
 /* Styles for the individual boxes */
 .box-container {
   display: flex !important;
   justify-content: center !important;
-  align-items: center !important;
   gap: 30px !important;
   margin-top: 40px !important;
 }
@@ -20,8 +29,8 @@
   align-items: center !important;
   background-color: #4b66b4 !important;
   color: #ffffff !important;
-  padding: 15px 30px !important;
-  font-size: 1.4rem !important;
+  padding: 15px 25px !important;
+  font-size: 1.1rem !important;
   font-weight: bold !important;
   text-decoration: none !important;
   border-radius: 12px !important;
