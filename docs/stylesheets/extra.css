@@ -1,0 +1,63 @@
+/* Force dark background for the entire site */
+html,
+body,
+.md-main,
+.md-main__inner,
+.md-content,
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Make the main body text a bigger font */
+.md-typeset {
+  font-size: 1rem !important;
+}
+
+/* Styles for the individual boxes */
+.box-container {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 30px !important;
+  margin-top: 40px !important;
+}
+
+.box {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #4b66b4 !important;
+  color: #ffffff !important;
+  padding: 15px 25px !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Ensure all headings and strong text are white */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-typeset strong {
+  color: #ffffff !important;
+}
+
+/* Remove hyperlink from site name */
+.md-header__button.md-logo + .md-header__title,
+.md-header__title {
+  text-decoration: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}

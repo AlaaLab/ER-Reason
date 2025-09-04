@@ -6,11 +6,10 @@ import pandas as pd
 import json
 import gc
 
-# Load the CSV file
-df = pd.read_csv('acuity_results.csv')
+discharge_summaries = pd.read_csv('results.csv')
 
 # Path to the model
-model_path = '/wynton/protected/project/shared_models/llama3-hf_series/Llama-3.2-3B-Instruct/'
+model_path = '...Llama-3.2-3B-Instruct/'
 
 # Model parameters
 TEMPERATURE = 0.5  
@@ -25,19 +24,19 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 # Function to process each record
-def process_record(idx, row, model, tokenizer, temperature=TEMPERATURE):
+def process_record(record_idx, model, tokenizer):
     # Prepare the input message
     messages = [
         {
             "role": "system",
-            "content": "You are an experienced Triage Nurse in the ER. Predict the emergency department acuity level for this patient."
+            "content": "You are an experienced emergency department (ED) physician creating a one-liner for a NEW patient who has just arrived at the ED. The patient's past discharge summary is available to you.\n"
         },
         {
             "role": "user",
-            "content": f"Select the most appropriate acuity level from the following options ONLY:\n'Immediate', 'Emergent', 'Urgent', 'Less Urgent', 'Non-Urgent'\n\nRespond with ONLY ONE of these five options based on the information provided.\nChief Complaint: {row['primarychiefcomplaintname']}\nVitals: {row['Vital_Signs']}\nAge: {row['Age']}\nSex: {row['sex']}\nRace: {row['firstrace']}"
+            "content": f"Your task is to summarize the patient's relevant PAST medical history and end with their CURRENT chief complaint that is given with no adjectives about the chief complaint as you can NOT assume anything about their current condition. All notes and medical records provided are from PAST encounters, not the current visit.Create a concise one-liner summary for a patient who has just arrived at the Emergency Department. The one-liner must: 1. Start with demographic information (age, sex). Example of a one liner:  80 y.o. old male, with h/o of HFpEF (EF 55-60% 05/20/22), HTN, HLD, and bipolar disorder presenting with shortness of breath.  Include a concise summary of relevant PAST medical history from previous visits/notes and end with the current Chief Complaint: {discharge_summaries.loc[record_idx, 'primarychiefcomplaintname']}\nDischarge Summary: {discharge_summaries.loc[record_idx, 'Discharge_Summary_Text']}\n Age: {discharge_summaries.loc[record_idx,'Age']}\n Sex: {discharge_summaries.loc[record_idx,'sex']}"
         },
     ]
-    
+
     # Format messages for Llama 3
     prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     
@@ -46,8 +45,8 @@ def process_record(idx, row, model, tokenizer, temperature=TEMPERATURE):
     outputs = model.generate(
         **inputs,
         max_new_tokens=MAX_NEW_TOKENS,
-        temperature=temperature,
-        do_sample=(temperature > 0)  # Enable sampling only if temperature > 0
+        temperature=TEMPERATURE,
+        do_sample=(TEMPERATURE > 0)  # Enable sampling only if temperature > 0
     )
     
     # Extract the generated text
@@ -67,36 +66,20 @@ def process_record(idx, row, model, tokenizer, temperature=TEMPERATURE):
     return response
 
 # Main function
-if __name__ == '__main__':  
+if __name__ == '__main__':
     # Process each record in the DataFrame
     summaries = []
     
     # Add a progress indicator
-    total_records = len(df)
+    total_records = len(discharge_summaries)
     print(f"Processing {total_records} records with temperature={TEMPERATURE}...")
     
-#     # Process a small sample first to verify output format
-#     sample_size = min(3, len(df))
-#     print(f"Testing with {sample_size} sample records first...")
-    
-#     for idx in range(sample_size):
-#         row = df.iloc[idx]
-#         summary = process_record(idx, row, model, tokenizer)
-#         print(f"\nSample {idx+1}:")
-#         print(f"Response: {summary}")
-    
-#     # Ask for confirmation before processing the full dataset
-#     proceed = input("\nContinue with full dataset? (y/n): ")
-#     if proceed.lower() != 'y':
-#         print("Exiting...")
-#         sys.exit()
-    
     # Process all records
-    for idx, row in df.iterrows():
+    for idx in range(len(discharge_summaries)):
         if idx % 10 == 0:
             print(f"Processing record {idx}/{total_records}")
         
-        summary = process_record(idx, row, model, tokenizer)
+        summary = process_record(idx, model, tokenizer)
         summaries.append(summary)
         
         # Occasional garbage collection to manage memory
@@ -105,8 +88,9 @@ if __name__ == '__main__':
             gc.collect()
     
     # Add the generated summaries as a new column in the DataFrame
-    df['Predicted_Acuity'] = summaries
+    discharge_summaries['Generated_Summary'] = summaries
     
-    output_filename = f'llama_4_experiment_temp{TEMPERATURE}.csv'
-    df.to_csv(output_filename, index=False)
+    # Save the updated DataFrame to a new CSV file - include temperature in filename
+    output_filename = f'llama_ehr_temp{TEMPERATURE}.csv'
+    discharge_summaries.to_csv(output_filename, index=False)
     print(f"Processed summaries saved to '{output_filename}'")

@@ -1,5 +1,3 @@
-
-
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 import pandas as pd
@@ -7,7 +5,7 @@ import time
 import re
 
 # Load your local LLaMA 3.2-3B model
-model_path = '/wynton/protected/project/shared_models/llama3-hf_series/Llama-3.2-3B-Instruct/'
+model_path = '...Llama-3.2-3B-Instruct/'
 
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(

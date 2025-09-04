@@ -1,8 +1,3 @@
-################################################################################################
-# Job for Llama 3 Disposition Prediction
-# Author: Nikita Mehandru
-# Date last edited: 05/14/2025
-################################################################################################
 import sys
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -12,11 +7,10 @@ import json
 import gc
 
 
-# Load the CSV file
-df = pd.read_csv('/wynton/protected/home/ibrahim/nmehandru/ed-summarization/cr/disposition/results.csv')
+df = pd.read_csv('...disposition/results.csv')
 
 # Path to the model
-model_path = '/wynton/protected/project/shared_models/llama3-hf_series/Llama-3.2-3B-Instruct/'
+model_path = '...Llama-3.2-3B-Instruct/'
 
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 
@@ -116,10 +110,7 @@ def prepare_notes_content(record, requested_notes):
         column_name = note_type_to_column.get(note_type)
         if column_name and column_name in df.columns and not pd.isna(df.loc[record, column_name]):
             notes_content += f"\n\n{note_type}:\n{truncate_text(df.loc[record, column_name])}"
-    
     return notes_content
-
-
 
 def predict_dispositions(records, llm_pipeline):
     predictions = []
@@ -188,7 +179,5 @@ if __name__ == '__main__':
     df.loc[valid_indices, 'Predicted_Disposition'] = all_predictions
     df.loc[valid_indices, 'Requested_Notes'] = all_requested_notes
 
-    # Save the DataFrame with the predictions to a
-
-    df.to_csv("/wynton/protected/home/ibrahim/nmehandru/ed-summarization/cr/disposition/llama_disposition_predictions.csv", index=False)
+    df.to_csv("...llama_disposition_predictions.csv", index=False)
     print("Batch predictions saved to 'llama_disposition_predictions.csv'")

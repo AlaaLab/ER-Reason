@@ -1,0 +1,23 @@
+site_name: ER-Reason
+site_description: Advancing the evaluation of clinical reasoning in emergency care
+docs_dir: docs
+site_dir: site
+
+site_url: https://alaalab.github.io/ER-Reason/
+use_directory_urls: false
+
+theme:
+  name: material
+  palette:
+    - scheme: slate # dark mode
+  features:
+    - content.code.annotations
+    - content.code.copy
+
+plugins: []
+
+nav:
+  - Home: index.md
+
+extra_css:
+  - stylesheets/extra.css
