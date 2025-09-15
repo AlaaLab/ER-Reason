@@ -1,5 +1,4 @@
 site_name: ER-Reason
-site_description: Advancing the evaluation of clinical reasoning in emergency care
 docs_dir: docs
 site_dir: site
 
@@ -9,7 +8,7 @@ use_directory_urls: false
 theme:
   name: material
   palette:
-    - scheme: slate # dark mode
+    - scheme: default 
   features:
     - content.code.annotations
     - content.code.copy
@@ -17,7 +16,7 @@ theme:
 plugins: []
 
 nav:
-  - Home: index.md
+  - ER-Reason: index.md
 
 extra_css:
   - stylesheets/extra.css
