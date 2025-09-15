@@ -1,18 +1,6 @@
-/* Force dark background for the entire site */
-html,
-body,
-.md-main,
-.md-main__inner,
-.md-content,
-.md-sidebar--primary,
-.md-sidebar--secondary {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-}
-
-/* Make the main body text a bigger font */
+/* Main body text font size */
 .md-typeset {
-  font-size: 1rem !important;
+  font-size: 0.85rem !important;
 }
 
 /* Styles for the individual boxes */
@@ -27,8 +15,8 @@ body,
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  background-color: #4b66b4 !important;
-  color: #ffffff !important;
+  background-color: #4b66b4 !important; /* purple box */
+  color: #ffffff !important;           /* white text inside */
   padding: 15px 25px !important;
   font-size: 1.1rem !important;
   font-weight: bold !important;
@@ -43,7 +31,7 @@ body,
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* Ensure all headings and strong text are white */
+/* All headings in black */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -51,7 +39,7 @@ body,
 .md-typeset h5,
 .md-typeset h6,
 .md-typeset strong {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 /* Remove hyperlink from site name */
