@@ -1,11 +1,12 @@
-
 ---
 hide:
   - navigation
+  - toc
 ---
-
-## A Benchmark Dataset for LLM-Based Clinical Reasoning in the Emergency Room
-
+<div class="hero-title">
+  <h1>ER-Reason</h1>
+  <h2>A Benchmark Dataset for LLM-Based Clinical Reasoning in the Emergency Room</h2>
+</div>
 
 ![ER-REASON image](images/er.png)
 
@@ -43,6 +44,7 @@ This benchmark is structured around **five key stages of the ER workflow**:
 ---
 
 ER-Reason represents a major step forward in benchmarking the real-world applicability of LLMs in emergency care. By moving beyond factual recall, it evaluates models on **true clinical reasoning, pattern recognition, and decision-making** under realistic conditions.
+
 
 
 
