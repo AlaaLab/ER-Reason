@@ -31,6 +31,25 @@
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25) !important;
 }
 
+/* Center the hero title block */
+.hero-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.hero-title h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #333;
+  margin-top: 0;
+}
+
+
 /* All headings in black */
 .md-typeset h1,
 .md-typeset h2,
