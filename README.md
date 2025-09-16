@@ -59,7 +59,7 @@ git clone https://github.com/AlaaLab/ER-Reason.git
 ### **Step 2: Install dependencies**
 
 ```bash
-pip install -r <path-to-repo>/ER-Reason/requirements.txt
+pip install -r ER-Reason/requirements.txt
 ```
 
 ### **Step 3: Download the dataset**
