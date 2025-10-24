@@ -65,6 +65,6 @@ pip install -r ER-Reason/requirements.txt
 ### **Step 3: Download the dataset**
 
 Download the ER-Reason dataset from PhysioNet:  
-Link is coming. Currently, under review at PhysioNet. 
+https://physionet.org/content/er-reason/1.0.0/
 
 > **Note:** Access requires registration and data use agreement approval.
