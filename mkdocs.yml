@@ -1,14 +1,19 @@
 site_name: ER-Reason
-docs_dir: docs
-site_dir: site
-
 site_url: https://alaalab.github.io/ER-Reason/
 use_directory_urls: false
 
+docs_dir: docs
+site_dir: site
+
 theme:
   name: material
+  font:
+    text: Inter
+    code: JetBrains Mono
   palette:
-    - scheme: default 
+    - scheme: default
+      primary: white
+      accent: blue grey
   features:
     - content.code.annotations
     - content.code.copy
