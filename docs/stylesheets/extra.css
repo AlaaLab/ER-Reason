@@ -1,56 +1,17 @@
-/* Main body text font size */
+/* ============================================
+   ER-REASON — Clean Academic Style Theme
+   Based on Material for MkDocs
+============================================ */
+
+/* --------- Typography --------- */
 .md-typeset {
-  font-size: 0.85rem !important;
+  font-size: 0.9rem !important;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  line-height: 1.6 !important;
+  color: #111 !important;
 }
 
-/* Styles for the individual boxes */
-.box-container {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 30px !important;
-  margin-top: 40px !important;
-}
-
-.box {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background-color: #4b66b4 !important; /* purple box */
-  color: #ffffff !important;           /* white text inside */
-  padding: 15px 25px !important;
-  font-size: 1.1rem !important;
-  font-weight: bold !important;
-  text-decoration: none !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.box:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25) !important;
-}
-
-/* Center the hero title block */
-.hero-title {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.hero-title h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero-title h2 {
-  font-size: 1.2rem;
-  font-weight: normal;
-  color: #333;
-  margin-top: 0;
-}
-
-
-/* All headings in black */
+/* Headings */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -58,13 +19,107 @@
 .md-typeset h5,
 .md-typeset h6,
 .md-typeset strong {
-  color: #000000 !important;
+  color: #000 !important;
+  font-weight: 600 !important;
 }
 
-/* Remove hyperlink from site name */
+/* --------- Hero Section --------- */
+.hero-title {
+  text-align: center;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.hero-title h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.hero-title h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #444;
+  margin-top: 0;
+}
+
+/* Hero image sizing */
+.md-content img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* --------- Link Boxes --------- */
+.box-container {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  margin-top: 30px !important;
+}
+
+.box {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #3f51b5 !important; /* soft indigo */
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border-radius: 10px !important;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.25s ease;
+}
+
+.box:hover {
+  background-color: #5c6bc0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* --------- Header Bar (White) --------- */
+.md-header {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Header title */
+.md-header__title {
+  color: #111 !important;
+}
+
+/* Remove hyperlink effect from site name */
 .md-header__button.md-logo + .md-header__title,
 .md-header__title {
   text-decoration: none !important;
   pointer-events: none !important;
   cursor: default !important;
+}
+
+/* --------- Navigation Links --------- */
+.md-tabs__link,
+.md-nav__link {
+  color: #333 !important;
+}
+.md-tabs__link--active,
+.md-nav__link--active {
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+/* --------- Body Links --------- */
+.md-typeset a {
+  color: #0044cc !important;
+  text-decoration: none;
+}
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+/* --------- Layout Spacing --------- */
+.md-content {
+  padding-top: 1.5rem !important;
 }
