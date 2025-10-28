@@ -39,8 +39,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -63,7 +63,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue-grey">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -121,7 +121,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue-grey"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
 </form>
@@ -368,7 +368,7 @@
 <div class="box-container">
   <a href="https://arxiv.org/abs/2505.22919" class="box">Paper</a>
   <a href="https://github.com/AlaaLab/ER-Reason" class="box">GitHub</a>
-  <a href="coming soon" class="box">Dataset</a>
+  <a href="https://physionet.org/content/er-reason/1.0.0/" class="box">Dataset</a>
 </div>
 <hr />
 <p>Large language models (LLMs) are increasingly applied to the field of medicine, but most benchmarks focus on narrow, exam-style medical question-answering rather than full clinical reasoning. ER-Reason captures the end-to-end emergency room (ER) decision-making pipeline, designed to test how well LLMs can approximate the complex, real-world reasoning of clinicians in high-stakes settings. </p>
@@ -391,8 +391,8 @@
 </ol>
 <h3 id="physician-authored-rationales">Physician-Authored Rationales</h3>
 <ul>
-<li>Includes <strong>72 expert-authored rationales</strong> explaining their clinical decision-making process</li>
-<li>Provides a rare "gold standard" for evaluating reasoning in medical decisions, often a missing component in traditional EHR data</li>
+<li>Includes <strong>72 expert-authored rationales</strong> covering <strong>rule-out reasoning</strong>, <strong>decision factors</strong>, and <strong>treatment planning</strong>.  </li>
+<li>Provides a rare “gold standard” for evaluating reasoning in clinical decision-making, often missing from traditional EHR data.</li>
 </ul>
 <hr />
 <p>ER-Reason represents a major step forward in benchmarking the real-world applicability of LLMs in emergency care. By moving beyond factual recall, it evaluates models on <strong>true clinical reasoning, pattern recognition, and decision-making</strong> under realistic conditions.</p>
