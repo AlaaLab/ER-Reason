@@ -1,9 +1,4 @@
-/* ============================================
-   ER-REASON — Clean Academic Style Theme
-   Based on Material for MkDocs
-============================================ */
 
-/* --------- Typography --------- */
 .md-typeset {
   font-size: 0.9rem !important;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
@@ -50,7 +45,7 @@
   margin: 0 auto 1rem auto;
 }
 
-/* --------- Link Boxes --------- */
+/* --------- Link Boxes (Neutral Style) --------- */
 .box-container {
   display: flex !important;
   justify-content: center !important;
@@ -63,24 +58,25 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  background-color: #3f51b5 !important; /* soft indigo */
-  color: #ffffff !important;
+  background-color: #f5f5f5 !important; /* soft gray background */
+  color: #000000 !important;
   padding: 12px 24px !important;
   font-size: 1.05rem !important;
   font-weight: 600 !important;
   text-decoration: none !important;
-  border-radius: 10px !important;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px !important;
+  border: 1px solid #ccc !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
   transition: all 0.25s ease;
 }
 
 .box:hover {
-  background-color: #5c6bc0 !important;
+  background-color: #eaeaea !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
 }
 
-/* --------- Header Bar (White) --------- */
+/* --------- Header Bar (White Minimal) --------- */
 .md-header {
   background-color: #ffffff !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
@@ -112,11 +108,11 @@
 
 /* --------- Body Links --------- */
 .md-typeset a {
-  color: #0044cc !important;
-  text-decoration: none;
+  color: #111 !important;
+  text-decoration: underline;
 }
 .md-typeset a:hover {
-  text-decoration: underline;
+  color: #000 !important;
 }
 
 /* --------- Layout Spacing --------- */
