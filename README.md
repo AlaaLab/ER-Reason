@@ -1,70 +1,196 @@
-# ER-Reason: A Benchmark Dataset for LLM-Based Clinical Reasoning in the Emergency Room
+# ER-Reason: A Benchmark Dataset for LLM Clinical Reasoning in the Emergency Room
 
-## What is ER-Reason?
+**Paper:** https://arxiv.org/abs/2505.22919 | **Dataset:** [PhysioNet](https://physionet.org/content/er-reason/1.0.0/) | **Code:** [GitHub](https://github.com/AlaaLab/ER-Reason)
 
-ER-Reason is a large-scale benchmark suite for evaluating the clinical reasoning capabilities of large language models (LLMs) in the emergency room (ER) — a high-stakes environment where clinicians make rapid, life-critical decisions.
+---
 
-ER-Reason is designed to move beyond multiple-choice exam-style QA and instead test LLMs on realistic, multi-stage clinical workflows grounded in real-world electronic health records (EHRs). ER-Reason simulates the full ER decision-making pipeline—including triage, treatment selection, and final diagnosis—and includes expert-written rationales to capture the step-by-step thinking used by physicians in real clinical settings.
+## Overview
 
-For detailed column descriptions of the dataset, see:  
-[ER-Reason Dataset Column Descriptions](./ER-Reason_Column_Descriptions.md)
+ER-Reason is a benchmark for evaluating large language models (LLMs) on clinical reasoning across key stages of the emergency room (ER) workflow. Unlike benchmarks based on medical licensing exams, ER-Reason evaluates not just what decisions models make, but how their reasoning evolves as clinical evidence accumulates.
 
-## ✅ Key Features
+ER-Reason consists of two components:
 
-- **📚 Real-World Clinical Data**  
-  Includes **3,984 patients** and **25,174 de-identified longitudinal clinical notes** from an academic medical center. Document types include:
-  - Discharge summaries
-  - Progress notes
-  - History & Physical (H&P)
-  - Consult notes
-  - Imaging reports
-  - Echocardiography reports
-  - ER provider notes
+- **Longitudinal clinical notes** from 3,984 hospital encounters comprising 25,174 de-identified clinical notes across discharge summaries, progress notes, H&Ps, consult notes, imaging reports, and ER provider notes — supporting evaluation across triage intake, disposition planning, and final diagnosis.
+- **SCT reasoning evaluation** comprising 194 physician-authored patient cases annotated by two ER physicians (2,555 total annotations), with three metrics — DxUpdate, DxTrajectory, and FinalDx — that measure sequential belief updating against physician consensus.
 
-- **🧠 Clinical Reasoning Annotations**  
-  72 physician-authored rationales explaining the reasoning behind clinical decisions—modeled after residency-level teaching and not typically found in EHR documentation.
+---
 
-- **⚕️ Workflow-Aligned Clinical Tasks**  
-  Tasks are structured around the actual ER care process:
-  - Triage Intake
-  - EHR Review
-  - Initial Assessment
-  - Treatment Planning
-  - Disposition Planning (Admit, Discharge, ICU)
-  - Final Diagnosis
+## Dataset Access
 
-- **🤖 Model Compatibility**  
-  ER-Reason includes code and templates for evaluating:
-  - **LLaMA 3.2-3B-Instruct**
-  - **GPT-4o**
-  - **GPT-3.5 Turbo**
-  - **O3-Mini**
+The ER-Reason dataset is hosted on PhysioNet and requires credentialed access:
 
-- **🧪 LLM Evaluation Tasks**  
-  Benchmark includes structured tasks and metrics to evaluate:
-  - Acuity classification: determining patient urgency based on symptoms and clinical history
-  - EHR summarization: summarizing key aspects of a patient's clinical history
-  - Rationale generation: creating the reasoning behind clinical decisions, aligned with physician thinking
-  - Diagnosis inference: inferring the most likely diagnosis based on EHR data and symptoms
-  - Disposition prediction: predicting whether a patient should be admitted, discharged, or sent to the ICU.
-  - 
-## 🚀 Getting Started
+1. Register at [physionet.org](https://physionet.org) and complete CITI training
+2. Request access at: https://physionet.org/content/er-reason/1.0.0/
+3. Once approved, download the dataset files
 
-### **Step 1: Clone the ER-Reason repository**
+> **Note:** The dataset contains de-identified patient data and is governed by a PhysioNet data use agreement. Do not share or redistribute.
 
+### Key dataset files
+
+| File | Description |
+|---|---|
+| `er_reason.csv` | Main dataset — clinical notes, acuity, disposition, diagnosis labels |
+| `icd_10_codes.csv` | Ground-truth ICD-10 codes per encounter (used in diagnosis evaluation) |
+| `annotated_sct.csv` | SCT cases with one-sentence summaries and differential/evidence columns |
+| `sct-annotations.csv` | SCT case list with encounterkeys |
+| `sct_cleaned_annotations.csv` | Physician rationales — encounterkey, differential, rationale |
+| `gt_clean.csv` | Ground-truth DxUpdate and DxTrajectory scores for SCT evaluation |
+
+The CCSR reference file used for diagnosis evaluation must be downloaded separately from AHRQ:
+https://hcup-us.ahrq.gov/toolssoftware/ccsr/dxccsr.jsp
+
+---
+
+## Repository Structure
+
+```
+ER-Reason/
+├── Experiments/
+│   ├── Standard Clinical Tasks/
+│   │   ├── acuity.py               # Acuity prediction (zero-shot + step-back)
+│   │   ├── disposition.py          # Disposition prediction (zero-shot + step-back)
+│   │   ├── final_diagnosis.py      # Final diagnosis prediction (zero-shot + step-back)
+│   │   ├── diag_evaluation.py      # ICD-10 exact match + CCSR accuracy
+│   │   └── cross_stage_analysis.py # Cross-stage workflow accuracy (Table 5)
+│   └── SCT Reasoning/
+│       ├── clinical_knowledge.py   # Clinical knowledge baseline (Table 3 CK column)
+│       ├── sct.py                  # SCT evaluation — baseline, single oracle, full oracle
+│       └── sct_eval.py             # DxUpdate, DxTrajectory, FinalDx, coherence, Figure 3
+├── ER-Reason-V1-Archive/           # Original codebase (archived)
+├── ER-Reason_Column_Descriptions.md
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## Setup
+
+**1. Clone the repository**
 ```bash
 git clone https://github.com/AlaaLab/ER-Reason.git
+cd ER-Reason
 ```
 
-### **Step 2: Install dependencies**
+**2. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Set your OpenRouter API key**
+
+All experiment scripts use [OpenRouter](https://openrouter.ai) so you can swap in any supported model with a single line change.
 
 ```bash
-pip install -r ER-Reason/requirements.txt
+export OPENROUTER_API_KEY="sk-or-..."
 ```
 
-### **Step 3: Download the dataset**
+All scripts also enable Zero Data Retention (`"provider": {"zdr": True}`) by default, routing requests only to ZDR-compliant providers.
 
-Download the ER-Reason dataset from PhysioNet:  
-https://physionet.org/content/er-reason/1.0.0/
+---
 
-> **Note:** Access requires registration and data use agreement approval.
+## Running Experiments
+
+### Swapping models
+
+Each script has a `MODEL_NAME` variable at the top. Replace it with any OpenRouter model string:
+
+```python
+MODEL_NAME = "openai/gpt-5.2-20251211"
+# MODEL_NAME = "openai/o4-mini"          # remove temperature parameter for this model
+# MODEL_NAME = "deepseek/deepseek-r1"
+# MODEL_NAME = "google/gemini-2.5-flash"
+# MODEL_NAME = "anthropic/claude-sonnet-4-5"
+# MODEL_NAME = "microsoft/phi-4"
+```
+
+To enable Claude thinking mode, add to the API call:
+```python
+extra_body={"thinking": {"type": "enabled", "budget_tokens": 10000}}
+```
+
+---
+
+### Standard Clinical Tasks
+
+All three scripts run zero-shot and step-back conditions in a single pass, saving results to a CSV with a `condition` column.
+
+**Acuity prediction**
+```bash
+python Experiments/Standard\ Clinical\ Tasks/acuity.py
+# Output: acuity_results.csv
+```
+
+**Disposition prediction**
+```bash
+python Experiments/Standard\ Clinical\ Tasks/disposition.py
+# Output: disposition_results.csv
+```
+
+**Final diagnosis prediction**
+```bash
+python Experiments/Standard\ Clinical\ Tasks/final_diagnosis.py
+# Output: diagnosis_results.csv
+```
+
+**Diagnosis evaluation** (ICD-10 exact match + CCSR accuracy)
+```bash
+python Experiments/Standard\ Clinical\ Tasks/diag_evaluation.py
+# Reads: diagnosis_results.csv, icd_10_codes.csv, DXCCSR_v2025-1.CSV
+```
+
+**Cross-stage workflow accuracy** (Table 5)
+```bash
+python Experiments/Standard\ Clinical\ Tasks/cross_stage_analysis.py
+# Reads: acuity_results.csv, disposition_results.csv, diagnosis_results.csv,
+#        icd_10_codes.csv, DXCCSR_v2025-1.CSV
+```
+
+---
+
+### SCT Reasoning
+
+**Clinical knowledge baseline**
+```bash
+python Experiments/SCT\ Reasoning/clinical_knowledge.py
+# Output: clinical_knowledge_results.csv
+```
+
+**SCT evaluation** — runs all three conditions (baseline, single oracle, full oracle)
+```bash
+python Experiments/SCT\ Reasoning/sct.py
+# Output: sct_results.csv
+#         sct_baseline_checkpoint.csv
+#         sct_single_oracle_checkpoint.csv
+#         sct_full_oracle_checkpoint.csv
+```
+
+Each condition checkpoints independently — if interrupted, re-running will resume from where it left off.
+
+**SCT metrics and figures** (Tables 2, 3, 4 and Figure 3)
+```bash
+python Experiments/SCT\ Reasoning/sct_eval.py
+# Reads: sct_results.csv, gt_clean.csv
+# Output: top1_by_timestep.pdf, top1_by_timestep.png
+```
+
+---
+
+## Citation
+
+If you use ER-Reason in your research, please cite:
+
+```bibtex
+@inproceedings{@article{mehandru2025er,
+  title={Er-reason: A benchmark dataset for llm-based clinical reasoning in the emergency room},
+  author={Mehandru, Nikita and Golchini, Niloufar and Bamman, David and Zack, Travis and Molina, Melanie F and Alaa, Ahmed},
+  journal={arXiv preprint arXiv:2505.22919},
+  year={2025}
+}
+```
+
+---
+
+## License
+
+The code in this repository is released under the MIT License. The dataset is governed by the PhysioNet Data Use Agreement and may not be redistributed.
