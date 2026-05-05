@@ -83,7 +83,7 @@ def predict_acuity(row, max_retries=MAX_RETRIES):
                     {"role": "user",   "content": prompt}
                 ],
                 temperature=0.1,  # remove this line for o4-mini
-                max_tokens=50,    # one label — no more needed
+                max_tokens=100,    # one label — no more needed
                 extra_body={"provider": {"zdr": True}},  # Zero Data Retention
             )
 
