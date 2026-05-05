@@ -1,6 +1,6 @@
 # ER-Reason: A Benchmark Dataset for LLM Clinical Reasoning in the Emergency Room
 
-**Paper:** https://arxiv.org/abs/2505.22919 | **Dataset:** [PhysioNet](https://physionet.org/content/er-reason/1.0.0/) | **Code:** [GitHub](https://github.com/AlaaLab/ER-Reason)
+**Paper:** https://arxiv.org/abs/2505.22919 | **Dataset:** [PhysioNet](https://physionet.org/content/er-reason/1.0.0/) 
 
 ---
 
@@ -19,9 +19,9 @@ ER-Reason consists of two components:
 
 The ER-Reason dataset is hosted on PhysioNet and requires credentialed access:
 
-1. Register at [physionet.org](https://physionet.org) and complete CITI training
+1. Register at [physionet.org](https://physionet.org) and complete CITI training.
 2. Request access at: https://physionet.org/content/er-reason/1.0.0/
-3. Once approved, download the dataset files
+3. Once approved, download the dataset files.
 
 > **Note:** The dataset contains de-identified patient data and is governed by a PhysioNet data use agreement. Do not share or redistribute.
 
@@ -80,7 +80,7 @@ pip install -r requirements.txt
 
 **3. Set your OpenRouter API key**
 
-All experiment scripts use [OpenRouter](https://openrouter.ai) so you can swap in any supported model with a single line change.
+All experiment scripts use [OpenRouter](https://openrouter.ai), so you can swap in any supported model with a single line change.
 
 ```bash
 export OPENROUTER_API_KEY="sk-or-..."
