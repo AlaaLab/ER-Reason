@@ -27,14 +27,15 @@ The ER-Reason dataset is hosted on PhysioNet and requires credentialed access:
 
 ### Key dataset files
 
-| File | Description |
-|---|---|
-| `er_reason.csv` | Main dataset — clinical notes, acuity, disposition, diagnosis labels |
-| `icd_10_codes.csv` | Ground-truth ICD-10 codes per encounter (used in diagnosis evaluation) |
-| `annotated_sct.csv` | SCT cases with one-sentence summaries and differential/evidence columns |
-| `sct-annotations.csv` | SCT case list with encounterkeys |
-| `sct_cleaned_annotations.csv` | Physician rationales — encounterkey, differential, rationale |
-| `gt_clean.csv` | Ground-truth DxUpdate and DxTrajectory scores for SCT evaluation |
+ 
+| File | Description | Key columns |
+|---|---|---|
+| `er_reason.csv` | Main dataset — one row per encounter, includes all clinical note text, demographic fields, acuity level, disposition, and primary ED diagnosis | `patientdurablekey`, `encounterkey`, `primarychiefcomplaintname`, `primaryeddiagnosisname`, `acuitylevel`, `eddisposition`, `ED_Provider_Notes_Text`, `Discharge_Summary_Text`, `One_Sentence_Extracted` |
+| `icd_10_codes.csv` | Ground-truth ICD-10 codes per encounter — one row per code, multiple rows per encounter | `patientdurablekey`, `encounterkey`, `value` (ICD-10 code), `displaystring` (diagnosis name) |
+| `annotated_sct.csv` | SCT evaluation cases derived from `er_reason.csv` — one row per encounter, includes the one-sentence patient summary and up to 5 differential/evidence pairs per case | `encounterkey`, `One_Sentence_Extracted`, `differential_1`–`differential_5`, `evidence_1`–`evidence_5` |
+| `sct-annotations.csv` | Master list of the 194 SCT case encounterkeys — used to filter `er_reason.csv` to SCT encounters | `encounterkey` |
+| `sct_cleaned_annotations.csv` | Physician rationales for each differential/evidence step — one row per (encounter, differential) pair | `encounterkey`, `differential`, `rationale` |
+| `gt_clean.csv` | Ground-truth physician consensus scores for SCT evaluation — one row per (encounter, differential) pair | `encounterkey`, `differential`, `dxupdate` (ordinal score −2 to +2), `dxtrajectory` (ranked dict of all differentials) |
 
 The CCSR reference file used for diagnosis evaluation must be downloaded separately from AHRQ:
 https://hcup-us.ahrq.gov/toolssoftware/ccsr/dxccsr.jsp
